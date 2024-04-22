@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html xmlns:th="www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>퀴즈 등록</title>
+</head>
+<body>
+<form th:action="@{/quiz/insert}" method="post">
+    <div>
+        <label for="quiz">퀴즈내용</label>
+        <input type="text" name="quiz" th:field="${quizDto.quiz}">
+        <span th:errors="${quizDto.quiz}"></span>
+    </div>
+    <div>
+        <label for="answer">해답</label>
+        <input type="radio" value="TRUE" th:field="*{quizDto.answer}">O
+        <input type="radio" value="FALSE" th:field="*{quizDto.answer}">X
+    </div>
+    <div>
+        <label for="user">작성자</label>
+        <input type="text" name="user" th:field="${quizDto.user}">
+        <span th:errors="${quizDto.user}"></span>
+    </div>
+    <input type="submit" value="등록">
+</form>
+<br>
+<a th:href="@{/quiz/show}">메인화면으로 돌아가기</a>
+</body>
+</html>

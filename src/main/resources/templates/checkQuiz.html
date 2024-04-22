@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html xmlns:th="www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Check</title>
+</head>
+<body>
+<h1>게임 결과</h1>
+<hr>
+<h2 th:text="${text}"></h2>
+<a th:href="@{/quiz/play}">다시 플레이하기</a>
+<br>
+<a th:href="@{/quiz}">메인 화면으로 돌아가기</a>
+</body>
+</html>
